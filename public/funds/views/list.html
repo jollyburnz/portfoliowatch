@@ -1,0 +1,11 @@
+<section data-ng-controller="FundsController" data-ng-init="find()">
+	<ul class="funds unstyled">
+		<li data-ng-repeat="fund in funds">
+			<span>{{fund.created | date:'medium'}}</span> /
+			<span>{{fund.user.name}}</span>
+			<h2><a data-ng-href="#!/funds/{{fund._id}}">{{fund.title}}</a></h2>
+			<div>{{fund.content}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!funds || funds.length">No funds yet. <br> Why don't you <a href="/#!/funds/create">Create One</a>?</h1>
+</section>
